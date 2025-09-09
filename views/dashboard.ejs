@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <!-- Navbar -->
+  <nav class="bg-blue-600 p-4 flex justify-between items-center text-white">
+    <h1 class="text-2xl font-bold">MySchool Dashboard</h1>
+    <a href="/" class="bg-red-500 px-4 py-2 rounded-lg hover:bg-red-600">Logout</a>
+  </nav>
+
+  <!-- Welcome Section -->
+  <section class="p-10">
+    <h2 class="text-3xl font-bold text-gray-800">Welcome, <%= firstname %> <%= lastname %> 👋</h2>
+    <p class="text-gray-600 mt-2">We’re glad to have you back in your learning portal.</p>
+  </section>
+
+  <!-- Dashboard Content -->
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-6 p-10">
+    <div class="bg-white shadow-md p-6 rounded-lg">
+      <h3 class="text-xl font-semibold text-blue-600">📚 My Courses</h3>
+      <p class="text-gray-600 mt-2">View and manage your enrolled courses.</p>
+    </div>
+    <div class="bg-white shadow-md p-6 rounded-lg">
+      <h3 class="text-xl font-semibold text-blue-600">📝 Assignments</h3>
+      <p class="text-gray-600 mt-2">Check your pending assignments and submit them.</p>
+    </div>
+    <div class="bg-white shadow-md p-6 rounded-lg">
+      <h3 class="text-xl font-semibold text-blue-600">📊 Performance</h3>
+      <p class="text-gray-600 mt-2">Track your grades and progress over time.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center p-4 mt-10">
+    <p>© 2025 MySchool Dashboard. All rights reserved.</p>
+  </footer>
+</body>
+</html>
