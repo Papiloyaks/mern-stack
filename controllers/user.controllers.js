@@ -9,17 +9,18 @@ exports.signupUser = (req, res) => {
     .then(existingUser => {
       if (existingUser) {
         // Stop here by returning, so next .then is skipped
-        res.send("Email already registered. Please sign in.");
+        res.send("Email already registered. Please sign in <a href='/user/signin'>here</a>.");
         return; // Important: end the function chain
       }
 
       const newUser = new User({ firstname, lastname, email, password });
       return newUser.save();
     })
+    
     .then(savedUser => {
       if (!savedUser) return; // If we already responded, do nothing
 
-      res.send('Signup successful! You can now <a href="/signin">sign in</a>.');
+      res.send('Signup successful! You can now <a href="/user/signin">sign in</a>.');
     })
     .catch(err => {
       if (!res.headersSent) { // Prevent double-send if an error occurs after response
@@ -42,7 +43,7 @@ exports.loginUser = (req, res) => {
       }
 
       // If found, send them to the dashboard with their names
-      res.redirect(`/dashboard?firstname=${user.firstname}&lastname=${user.lastname}`);
+      res.redirect(`/user/dashboard?firstname=${user.firstname}&lastname=${user.lastname}`);
     })
     .catch(err => {
       res.send("Error: " + err.message);

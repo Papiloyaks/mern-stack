@@ -23,6 +23,7 @@ app.use('/user', userRouter);
 
 
 
+
  let URI = "mongodb+srv://papiloyaks65:papilo45@cluster0.0lobeff.mongodb.net/Yaks_db?retryWrites=true&w=majority&appName=Cluster0";
 
  mongoose.connect(URI)
